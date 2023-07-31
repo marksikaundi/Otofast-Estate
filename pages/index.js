@@ -1,128 +1,111 @@
-import "antd/dist/antd.min.css";
-import { Menu, Dropdown, Button } from "antd";
-import {
-  DownOutlined,
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
-  CalendarOutlined,
-  CheckOutlined,
-  ClockCircleOutlined,
-  CloseOutlined,
-  DeleteOutlined,
-  EditOutlined,
-  ExclamationCircleOutlined,
-  HeartOutlined,
-  LeftOutlined,
-  LockOutlined,
-  MailOutlined,
-  PaperClipOutlined,
-  PhoneOutlined,
-  QuestionCircleOutlined,
-  ReloadOutlined,
-  RightOutlined,
-  SearchOutlined,
-  SendOutlined,
-  ShareAltOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import Head from "next/head";
 import Header from "../components/header";
-import LocationCard from "../components/location-card";
+import Hero from "../components/hero";
+import AreasContainer from "../components/areas-container";
+import RentPropertiesForm from "../components/rent-properties-form";
+import RentPropertiesFilter from "../components/rent-properties-filter";
+import ContactForm from "../components/contact-form";
 import FooterContainer from "../components/footer-container";
 
-const PropertiesGridView = () => {
+const LandingPage = () => {
   return (
-    <div className="relative bg-gray-white w-full flex flex-col items-start justify-start text-center text-33xl text-gray-white font-body-regular-400">
-      <Header hamburger={false} showHamburgerMenuIcon />
-      <div className="self-stretch h-60 flex flex-col items-center justify-center bg-[url(/category@3x.png)] bg-cover bg-no-repeat bg-[top]">
-        <div className="flex flex-col items-center justify-start gap-[12px]">
-          <div className="relative leading-[72px] font-semibold">
-            Properties
+    <>
+      <Head>
+        <title>Otofast Estate</title>
+        <meta
+          name="description"
+          content="Get your home at an affordable rate"
+        />
+      </Head>
+      <div className="relative bg-gray-white w-full flex flex-col items-center justify-start text-center text-21xl text-primary-800 font-body-regular-600">
+        <Header hamburger showHamburgerMenuIcon={false} />
+        <Hero />
+        <div className="self-stretch flex-1 flex flex-col py-[53px] px-[50px] items-center justify-start gap-[45px]">
+          <div className="self-stretch flex flex-col py-0 px-[30px] items-center justify-start gap-[24px] md:self-stretch md:w-auto">
+            <div className="self-stretch relative leading-[48px] font-semibold">
+              Properties by Area
+            </div>
+            <div className="self-stretch relative text-xl leading-[28px] text-lightslategray">
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+              posuere cubilia curae; Proin sodales ultrices nulla blandit
+              volutpat.
+            </div>
           </div>
-          <div className="relative text-base leading-[24px] text-whitesmoke-200 font-body-regular-600">
-            <span>{`Home / `}</span>
-            <span className="font-medium text-gray-white">Properties</span>
+          <div className="self-stretch flex-1 flex flex-row flex-wrap py-0 px-2.5 box-border items-start justify-center max-w-[95%px] text-left text-5xl text-gray-white">
+            <div className="self-stretch flex-1 flex flex-col items-center justify-start gap-[24px] max-w-[1300px]">
+              <div className="self-stretch flex flex-row items-start justify-center gap-[26px] lg:flex-row md:flex-col">
+                <div className="flex-1 rounded-lg h-[241px] flex flex-row items-start justify-start relative bg-[url(/card-1@3x.png)] bg-cover bg-no-repeat bg-[top] md:flex-[unset] md:self-stretch">
+                  <div className="my-0 mx-[!important] absolute top-[16px] left-[16px] flex flex-col items-start justify-start gap-[11px] z-[0]">
+                    <div className="relative leading-[32px] font-semibold">
+                      Centerville
+                    </div>
+                    <div className="relative text-base leading-[24px] text-center">
+                      25 listings
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-1 rounded-lg h-[241px] flex flex-row items-start justify-start relative bg-[url(/card-2@3x.png)] bg-cover bg-no-repeat bg-[top] md:flex-[unset] md:self-stretch">
+                  <div className="my-0 mx-[!important] absolute top-[16px] left-[16px] flex flex-col items-start justify-start gap-[11px] z-[0]">
+                    <div className="relative leading-[32px] font-semibold">
+                      Centerville
+                    </div>
+                    <div className="relative text-base leading-[24px] text-center">
+                      25 listings
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-1 rounded-lg h-[241px] flex flex-row items-start justify-start relative bg-[url(/card-3@3x.png)] bg-cover bg-no-repeat bg-[top] md:flex-[unset] md:self-stretch">
+                  <div className="my-0 mx-[!important] absolute top-[16px] left-[16px] flex flex-col items-start justify-start gap-[11px] z-[0]">
+                    <div className="relative leading-[32px] font-semibold">
+                      Centerville
+                    </div>
+                    <div className="relative text-base leading-[24px] text-center">
+                      25 listings
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="self-stretch flex flex-row items-start justify-center gap-[24px] lg:flex-row md:flex-col">
+                <div className="flex-1 rounded-lg h-[241px] flex flex-row p-2.5 box-border items-start justify-start relative bg-[url(/card-4@3x.png)] bg-cover bg-no-repeat bg-[top] md:flex-[unset] md:self-stretch">
+                  <div className="my-0 mx-[!important] absolute top-[16px] left-[16px] flex flex-col items-start justify-start gap-[11px] z-[0]">
+                    <div className="relative leading-[32px] font-semibold">
+                      Arlington
+                    </div>
+                    <div className="relative text-base leading-[24px] text-center">
+                      25 listings
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-1 rounded-lg h-[241px] flex flex-row p-2.5 box-border items-start justify-start relative bg-[url(/card-5@3x.png)] bg-cover bg-no-repeat bg-[top] md:flex-[unset] md:self-stretch">
+                  <div className="my-0 mx-[!important] absolute top-[16px] left-[16px] flex flex-col items-start justify-start gap-[11px] z-[0]">
+                    <div className="relative leading-[32px] font-semibold">
+                      Centerville
+                    </div>
+                    <div className="relative text-base leading-[24px] text-center">
+                      25 listings
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <AreasContainer />
+        <RentPropertiesForm />
+        <RentPropertiesFilter />
+        <ContactForm />
+        <FooterContainer
+          imageIds="/houseline2.svg"
+          smallImageIds="/social-media-logo5.svg"
+          mediumImageIds="/social-media-logo6.svg"
+          smallImageIds2="/social-media-logo7.svg"
+          smallImageIds3="/social-media-logo8.svg"
+          largeImageIds="/social-media-logo9.svg"
+          propOverflow="unset"
+        />
       </div>
-      <div className="self-stretch flex flex-col pt-16 px-0 pb-2 items-center justify-start gap-[95px] text-left text-base text-gray-black font-body-regular-600 lg:pl-[120px] lg:pr-[120px] lg:box-border md:pl-[60px] md:pr-[60px] md:box-border sm:pl-5 sm:pr-5 sm:box-border">
-        <div className="w-[272px] flex flex-row items-center justify-start">
-          <div className="flex flex-row items-end justify-start gap-[16px]">
-            <div className="flex flex-row items-start justify-start gap-[8px]">
-              <img className="relative w-6 h-6" alt="" src="/listbullets.svg" />
-              <img className="relative w-6 h-6" alt="" src="/squaresfour.svg" />
-            </div>
-            <div className="relative leading-[24px]">Sort by:</div>
-            <Dropdown
-              overlay={
-                <Menu>
-                  {[
-                    { value: "Popular properties" },
-                    { value: "Latest properties" },
-                    { value: "Recommended properties" },
-                  ].map((option, index) => (
-                    <Menu.Item key={index}>
-                      <a onClick={(e) => e.preventDefault()}>
-                        {option.value || ""}
-                      </a>
-                    </Menu.Item>
-                  ))}
-                </Menu>
-              }
-              placement="bottomLeft"
-              trigger={["hover"]}
-            >
-              <a onClick={(e) => e.preventDefault()}>
-                {`Default Order `}
-                <DownOutlined />
-              </a>
-            </Dropdown>
-          </div>
-        </div>
-        <LocationCard />
-        <div className="flex flex-row items-end justify-center gap-[8px] text-center text-primary-500">
-          <div className="rounded bg-primary-50 flex flex-row p-2.5 items-start justify-start">
-            <img className="relative w-6 h-6" alt="" src="/arrowleft.svg" />
-          </div>
-          <button className="cursor-pointer [border:none] py-2.5 px-[9px] bg-primary-500 rounded-10xs flex flex-col items-start justify-start">
-            <div className="relative text-base leading-[24px] font-semibold font-body-regular-600 text-gray-white text-center flex items-end justify-center w-[26px]">
-              1
-            </div>
-          </button>
-          <button className="cursor-pointer [border:none] py-2.5 px-[9px] bg-primary-50 rounded-10xs flex flex-col items-start justify-start">
-            <div className="relative text-base leading-[24px] font-semibold font-body-regular-600 text-primary-500 text-center flex items-end justify-center w-[26px]">
-              2
-            </div>
-          </button>
-          <button className="cursor-pointer [border:none] py-2.5 px-[9px] bg-primary-50 rounded-10xs flex flex-col items-start justify-start">
-            <div className="relative text-base leading-[24px] font-semibold font-body-regular-600 text-primary-500 text-center flex items-end justify-center w-[26px]">
-              3
-            </div>
-          </button>
-          <div className="rounded-10xs bg-primary-50 flex flex-col py-2.5 px-[9px] items-start justify-start">
-            <div className="relative leading-[24px] font-semibold flex items-end justify-center w-[26px]">
-              ...
-            </div>
-          </div>
-          <button className="cursor-pointer [border:none] py-2.5 px-[9px] bg-primary-50 rounded-10xs flex flex-col items-start justify-start">
-            <div className="relative text-base leading-[24px] font-semibold font-body-regular-600 text-primary-500 text-center flex items-end justify-center w-[26px]">
-              54
-            </div>
-          </button>
-          <div className="rounded bg-primary-500 flex flex-row p-2.5 items-start justify-start">
-            <img className="relative w-6 h-6" alt="" src="/arrowright.svg" />
-          </div>
-        </div>
-      </div>
-      <FooterContainer
-        imageIds="/houseline1.svg"
-        smallImageIds="/social-media-logo.svg"
-        mediumImageIds="/social-media-logo1.svg"
-        smallImageIds2="/social-media-logo2.svg"
-        smallImageIds3="/social-media-logo3.svg"
-        largeImageIds="/social-media-logo4.svg"
-      />
-    </div>
+    </>
   );
 };
 
-export default PropertiesGridView;
+export default LandingPage;
